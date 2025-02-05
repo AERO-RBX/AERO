@@ -10,7 +10,11 @@ e = e or {}
 end
 
 
-Game({
+local dex = Game({
 	Game = g.Baseplate,
 	Link = "https://raw.githubusercontent.com/Lunar-Eclipse111/Swift.LOL/refs/heads/Scripts/Scripts/Universal/Dex"
 })
+
+if dex then
+return
+end
