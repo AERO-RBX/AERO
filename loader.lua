@@ -1,20 +1,9 @@
-local g={
-Baseplate = 4483381587,
-}
+local Games = loadstring(game:HttpGet(""))() -- nil, waiting for first script release
 
-local function Game(e)
-e = e or {}
-  if game.PlaceId == e.Game then
-    loadstring(game:HttpGet(e.Link))()
-  end
-end
-
-
-local dex = Game({
-	Game = g.Baseplate,
-	Link = "https://raw.githubusercontent.com/Lunar-Eclipse111/Swift.LOL/refs/heads/Scripts/Scripts/Universal/Dex"
-})
-
-if dex then
-return
+for PlaceID, Execute in pairs(Games) do
+    if PlaceID == game.PlaceId then
+        loadstring(game:HttpGet(Execute))()
+	else
+	error("No Game Found");
+    end
 end
