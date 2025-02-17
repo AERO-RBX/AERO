@@ -904,7 +904,7 @@ Drag(Main,Main)
 				return b;				
 			end
 			
-			function z:Slider(e)
+				function z:Slider(e)
 				e = e or {}
 
 
@@ -951,7 +951,7 @@ Drag(Main,Main)
 				SliderValue.Size = UDim2.new(0.0653742253780365, 0, 0.5, 0);
 				SliderValue.Font = Enum.Font.SourceSansBold;
 				SliderValue.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-				SliderValue.Text = e.Value;
+				SliderValue.Text = "0";
 				SliderValue.TextColor3 = Color3.fromRGB(193.00000369548798, 193.00000369548798, 193.00000369548798);
 				SliderValue.TextSize = 14;
 				SliderValue.TextTransparency = 1;
@@ -970,7 +970,7 @@ Drag(Main,Main)
 				Title.Size = UDim2.new(0, 162, 0, 25);
 				Title.Font = Enum.Font.SourceSansBold;
 				Title.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-				Title.Text = e.text;
+				Title.Text = e.text or "slider";
 				Title.TextColor3 = Color3.fromRGB(193.00000369548798, 193.00000369548798, 193.00000369548798);
 				Title.TextSize = 14;
 				Title.TextXAlignment = Enum.TextXAlignment.Left;
