@@ -1,8 +1,6 @@
--- if you can understand this code and figure out the docs on your own feel free to use i guess
-
 local _New_ = Instance.new;
 
-local AERO = _New_("ScreenGui", game.CoreGui);
+local AERO = _New_("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
 AERO.Name = "AERO";
 AERO.ZIndexBehavior = Enum.ZIndexBehavior.Sibling;
 AERO.IgnoreGuiInset = true
@@ -70,7 +68,11 @@ function aero:Int(e)
 		Startup.Position = UDim2.new(0.5, 0, 0.5, 0);
 		Startup.Size = UDim2.new(0, 130, 0, 130);
 		Startup.Visible = _G.Startup
-
+	
+	
+	
+	
+	
 		local Aero_Logo = _New_("ImageLabel", Startup);
 		Aero_Logo.AnchorPoint = Vector2.new(0.5, 0.5);
 		Aero_Logo.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
@@ -145,6 +147,7 @@ function aero:Int(e)
 		
 
 		local BindList = _New_("Frame",AERO);
+		BindList.Visible = false
 		BindList.BackgroundColor3 = Color3.fromRGB(17.00000088661909, 17.00000088661909, 17.00000088661909);
 		BindList.BorderColor3 = Color3.fromRGB(0, 0, 0);
 		BindList.BorderSizePixel = 0;
@@ -239,7 +242,34 @@ Drag(BindList,BindList);
 		Main.Name = "Main";
 		Main.Position = UDim2.new(0.5, 0, 0.5, 0);
 		Main.Size = UDim2.new(0, 650, 0, 363);
-Drag(Main,Main)
+		Drag(Main,Main)
+		
+		
+		e.Bind = e.Bind
+
+		local oldKey = e.Bind.Name
+		
+		
+		
+		local x = true
+		game:GetService("UserInputService").InputBegan:connect(function(current, ok) 
+
+
+			if not ok then 
+				if current.KeyCode.Name == oldKey then 
+					if x == false then
+						x = true
+						--	print("Open")
+
+						Main.Visible = true		
+					else
+						x = false
+						Main.Visible = false
+					end
+				end
+			end
+		end)
+		
 		local Aero_Logo = _New_("ImageLabel", Main);
 		Aero_Logo.AnchorPoint = Vector2.new(0.5, 0.5);
 		Aero_Logo.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
@@ -904,7 +934,7 @@ Drag(Main,Main)
 				return b;				
 			end
 			
-				function z:Slider(e)
+			function z:Slider(e)
 				e = e or {}
 
 
@@ -1486,5 +1516,4 @@ return z;
 		
 	end
 end
-
 return aero;
