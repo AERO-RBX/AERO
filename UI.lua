@@ -1,6 +1,6 @@
 local _New_ = Instance.new;
 
-local AERO = _New_("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
+local AERO = _New_("ScreenGui", game.CoreGui);
 AERO.Name = "AERO";
 AERO.ZIndexBehavior = Enum.ZIndexBehavior.Sibling;
 AERO.IgnoreGuiInset = true
